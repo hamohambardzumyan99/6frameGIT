@@ -82,10 +82,17 @@ celerybeat-schedule
 venv/
 ENV/
 
+<<<<<<< HEAD
 media/
 
+=======
+>>>>>>> 4650dcc89aebb99237f27eaabc03d20601a6ced8
 # Spyder project settings
 .spyderproject
 
 # Rope project settings
+<<<<<<< HEAD
 .ropeprojectdebug.log
+=======
+.ropeproject
+>>>>>>> 4650dcc89aebb99237f27eaabc03d20601a6ced8
