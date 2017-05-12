@@ -1,0 +1,100 @@
+{% extends 'base.html' %} {% load cms_tags menu_tags sekizai_tags staticfiles %} {% block content %}
+<!-- FREE -->
+<div id="header" class="header_containter">
+  <div class="Header">
+  </div>
+</div>
+<section class="main_sec">
+  <div class="Free_BG">
+    <div class="section-container">
+      <section id="{{ href_free }}" class="Free-section">
+        <div class="free_container">
+          <div class="name">
+            <h1>FREE INtros</h1></div>
+            <div class="card">
+              {% for obj_free in cont_free %}
+              <div class="content">
+                <div class="img_over">
+                  <a href="/free/{{ obj_free.id }}">
+                    {% if obj_free.image %}
+                    <img src="{{ obj_free.image.url }}" alt="">
+                    {% endif %}
+                  </a>
+
+                </div>
+                <div class="card-1">
+                  <div class="text_cont">
+                    <div class="text_align">
+                      <a href="/free/{{ obj_free.id }}">
+                        <p>{{obj_free.title}}</p>
+                      </a>
+                    </div>
+                    <div class="btn_cont">
+                      <a target="_blank" href="{{ obj_free.download_url}}">
+                        <button type="button" class="btn_download">
+                          <div class="img_center">
+                            <i class="demo-icon icon-download"></i>
+                          </div>
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <div class="btn_cont btn_black">
+              <a href="/en/free">  <p>All Intros</p></a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- PAID -->
+    <div class="Paid_BG">
+      <div class="section-container">
+        <section id="{{ href_paid }}" class="Paid-section">
+          <div class="paid_container">
+            <div class="name">
+              <h1>PAID INTROS</h1></div>
+              <div class="card">
+                {% for obj_paid in cont_paid %}
+                <div class="content">
+                  <div class="img_over">
+                    <a href="/paid/{{ obj_paid.id }}">
+                      {% if obj_paid.image %}
+                      <img src="{{ obj_paid.image.url }}" style="width:100%;">
+                      {% endif %}
+                    </a>
+                  </div>
+                  <div class="card-1">
+                    <div class="text_cont">
+                      <div class="text_align">
+                        <a href="/paid/{{ obj_paid.id }}">
+                          <p>{{obj_paid.title}}</p>
+                        </a>
+                      </div>
+                      <a target="_blank" href="/paid/{{ obj_paid.id }}">
+                        <div class="">
+                          <button type="button" class="btn_download">
+                            <div class="price_cont">
+                              <p>{{ obj_paid.price }}</p>
+                            </div>
+                          </button>
+
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+              <div class="btn_cont btn_black">
+                <a href="/en/paid">  <p>All Intros</p></a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+</section>
+{% endblock %}

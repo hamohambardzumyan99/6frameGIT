@@ -1,0 +1,96 @@
+
+{% load cms_tags menu_tags sekizai_tags staticfiles static %}
+<!doctype html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        {% comment %}  CSS {% endcomment %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/cards.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/body_base.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/show.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/fontello.css' %}"/>
+        <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+        {% comment %} JS {% endcomment %}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+        <script src="{% static 'js/scrolling-nav.js' %}"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js" type="text/javascript"></script>
+        <script src="{% static 'js/typeit.js' %}"></script>
+        <script src="{% static 'js/typeit.min.js' %}"></script>
+        {% comment %} STYLE {% endcomment %}
+        <style>
+          .Header{
+            margin: 0 auto;
+            height: 400px;
+            width: 400px;
+            background-image: url({% static 'logo/Header.png' %});
+            filter:drop-shadow(20deg);
+          }
+        </style>
+        {% render_block "css" %}
+    </head>
+    <body class="body_base" data-spy="scroll" data-target=".nav_base">
+          {% cms_toolbar %}
+
+          <div class="nav_base">
+              <ul class="nav nav_menu">
+                <li><a href="/en/"><h2>Home</h2></a></li>
+                <li><a class="page-scroll" href="#{{ href_free }}"><h2>{{ nav_free }}</h2></a></li>
+                <li><a class="page-scroll" href="#{{ href_paid }}"><h2>{{ nav_paid }}</h2></a></li>
+              </ul>
+          </div>
+            {% block content %}{% endblock content %}
+          <div class="footer" id="about">
+            <div class="footer_container section-container">
+              <div class="temp">
+                <div class="ab_cont">
+                  <h1>About Templates</h1>
+                  <p>all intros for commercial use.<br>Created on after effects CC. <br>in archive are included font and audio</p>
+                </div>
+                <div class="ab_cont">
+                  <h1>Paid intros</h1>
+                  <p>We sell ready-made templates.<br> You just need to change the text and render it</p>
+                </div>
+                <div class="ab_cont">
+                  <h1>Free Intros</h1>
+                  <p>easy for customizing and fast render.<br>Only for After Effects</p>
+                </div>
+              </div>
+            </div>
+              <div class="social">
+                  <div class="social_cont social_flex">
+                <h1>6Frame - </h1>
+                <a target="_blank" href="https://www.instagram.com/6frame_ae/">
+                  <i class="demo-icon icon-instagram"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="demo-icon icon-twitter"></i>
+                </a>
+                <a target="_blank" href="#">
+                  <i class="demo-icon icon-youtube-play"></i>
+                </a>
+                <a target="_blank" href="https://plus.google.com/+6Frame?pageId=110629700394235852255">
+                  <i class="demo-icon icon-gplus"></i>
+                </a>
+              </div>
+                  <div class="social_cont social_flex">
+                <h1>Made with Love <3</h1>
+              </div>
+              </div>
+            </div>
+          {% render_block "js" %}
+          <script type="text/javascript">
+
+              $('.type-it').typeIt({
+                  strings: ['Text', 'Name'],
+                  breakLines: false,
+                  speed: 300,
+                  loop: true,
+                });
+
+          </script>
+    </body>
+</html>

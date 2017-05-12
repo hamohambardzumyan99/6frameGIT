@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load cms_tags menu_tags sekizai_tags staticfiles %}
+{% block content %}
+<div id="header" class="header_containter">
+  <div class="Header">
+  </div>
+</div>
+<section class="main_sec">
+  <div class="Paid_BG">
+  <div class="section-container">
+    <section id="Paid" class="Paid-section">
+      <div class="paid_container">
+        <div class="name">
+          <a href="/en/paid"><h1>PAID</h1></a> </div>
+          <div class="card">
+            {% for obj_paid in cont_paid %}
+            <div class="content">
+              <a href="/paid/{{ obj_paid.id }}">
+                {% if obj_paid.image %}
+                <img src="{{ obj_paid.image.url }}" style="width:100%;">
+                {% endif %}
+              </a>
+              <div class="card-1">
+                <div class="text_cont">
+                  <div class="text_align">
+                    <a href="/paid/{{ obj_paid.id }}">
+                      <p>{{obj_paid.title}}</p>
+                    </a>
+                  </div>
+                  <a target="_blank" href="/paid/{{ obj_paid.id }}">
+                    <div class="">
+                      <button type="button" class="btn_download">
+                        <div class="price_cont">
+                          <p>{{ obj_paid.price }}</p>
+                        </div>
+                      </button>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load cms_tags menu_tags sekizai_tags staticfiles %}
+{% block content %}
+<div id="header" class="header_containter">
+  <div class="Header">
+  </div>
+</div>
+<section class="main_sec">
+  <div class="Free_BG">
+    <div class="section-container">
+      <section id="Free" class="Free-section">
+        <div class="free_container">
+          <div class="name">
+            <a href="/en/free"><h1>FREE</h1></a> </div>
+            <div class="card">
+              {% for obj_free in cont_free %}
+              <div class="content">
+                <a href="/free/{{ obj_free.id }}">
+                  {% if obj_free.image %}
+                  <img src="{{ obj_free.image.url }}" alt="">
+                  {% endif %}
+                </a>
+                <div class="card-1">
+                  <div class="text_cont">
+                    <div class="text_align">
+                      <a href="/free/{{ obj_free.id }}">
+                        <p>{{obj_free.title}}</p>
+                      </a>
+                    </div>
+                    <div class="btn_cont">
+                      <a target="_blank" href="{{ obj_free.download_url}}">
+                        <button type="button" class="btn_download">
+                          <div class="img_center">
+                            <i class="demo-icon icon-download"></i>
+                          </div>
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+</section>
+{% endblock %}
