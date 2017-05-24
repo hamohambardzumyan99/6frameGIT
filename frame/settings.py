@@ -1,3 +1,4 @@
+
 import os
 gettext = lambda s: s
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -26,9 +27,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7@xtx@-^&@s7^oqvlhcr=5_=cc1-#i_q-$#9d0f%m)o96sj$yj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['www.6frame.ml','6frame.ml']
+ALLOWED_HOSTS = ['127.0.0.1','6frame.ml']
 
 
 # Application definition
@@ -70,7 +71,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'frame', 'static'),
@@ -188,12 +189,13 @@ CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'frame',
-        'USER': 'framebase',
-        'PASSWORD': 'dumber17',
+        'CONN_MAX_AGE': 0,
+        'ENGINE': 'django.db.backends.sqlite3',
         'HOST': 'localhost',
+        'NAME': 'project.db',
+        'PASSWORD': '',
         'PORT': '',
+        'USER': ''
     }
 }
 
