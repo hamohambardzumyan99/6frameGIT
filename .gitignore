@@ -8,7 +8,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-env/
 build/
 develop-eggs/
 dist/
@@ -20,6 +19,7 @@ lib64/
 parts/
 sdist/
 var/
+wheels/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -42,7 +42,7 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
-*,cover
+*.cover
 .hypothesis/
 
 # Translations
@@ -66,7 +66,7 @@ docs/_build/
 # PyBuilder
 target/
 
-# IPython Notebook
+# Jupyter Notebook
 .ipynb_checkpoints
 
 # pyenv
@@ -75,24 +75,27 @@ target/
 # celery beat schedule file
 celerybeat-schedule
 
-# dotenv
-.env
+# SageMath parsed files
+*.sage.py
 
-# virtualenv
+# Environments
+.env
+.venv
+env/
 venv/
 ENV/
-frame/settings.py
-<<<<<<< HEAD
-media/
 
-=======
->>>>>>> 4650dcc89aebb99237f27eaabc03d20601a6ced8
 # Spyder project settings
 .spyderproject
+.spyproject
 
 # Rope project settings
-<<<<<<< HEAD
-.ropeprojectdebug.log
-=======
 .ropeproject
->>>>>>> 4650dcc89aebb99237f27eaabc03d20601a6ced8
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+
+.settings"frame/settings.py" 
