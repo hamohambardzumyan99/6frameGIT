@@ -84,7 +84,7 @@ celerybeat-schedule
 env/
 venv/
 ENV/
-
+media/
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -97,5 +97,5 @@ ENV/
 
 # mypy
 .mypy_cache/
-
-.settings"frame/settings.py" 
+frame/settings.py
+project.db
